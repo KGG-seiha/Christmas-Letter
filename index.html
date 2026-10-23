@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbfbed">
+    <meta name="description" content="Follow your letter to Santa from KGG all the way to the North Pole.">
+    <title>Santa Letter Express | KGG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="snow" aria-hidden="true">
+      <span>✳</span><span>✦</span><span>❄</span><span>✳</span><span>✦</span>
+      <span>❄</span><span>✳</span><span>✦</span><span>❄</span><span>✳</span>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="KGG Santa Letter Express home">
+        <img class="brand-logo" src="logo.webp" alt="KGG">
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-star">✳</span> A LITTLE MAGIC IS ON ITS WAY <span class="eyebrow-star">✳</span></p>
+          <h1 id="hero-title">Your letter to Santa<br>is going <span>places.</span></h1>
+          <p class="hero-subtitle">From KGG in Kitakyushu to the North Pole,<br class="desktop-break"> follow every merry mile of its journey.</p>
+          <a class="hero-cta" href="#track">Track your letter <span aria-hidden="true">↓</span></a>
+          <p class="hero-japanese">きたきゅうしゅうから、サンタさんへ。<br>おてがみの旅を見てみよう！</p>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a Christmas letter flying to Santa's North Pole post office">
+          <div class="art-sun"></div>
+          <span class="art-star star-one">✦</span><span class="art-star star-two">✳</span>
+          <span class="art-star star-three">✦</span><span class="art-star star-four">✧</span>
+          <div class="moon"></div>
+          <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+          <div class="postmark">SPECIAL<br>DELIVERY<span>✦</span></div>
+          <div class="letter">
+            <div class="letter-top"><span>✦</span> AIR MAIL <span>✦</span></div>
+            <div class="letter-lines"></div>
+            <div class="letter-to">To: Santa<br><small>North Pole</small></div>
+            <div class="letter-stamp">🎅</div>
+            <div class="letter-seal">KGG</div>
+          </div>
+          <div class="flight-path"></div>
+          <div class="sleigh" aria-hidden="true">🛷</div>
+          <div class="hill hill-back"></div><div class="hill hill-front"></div>
+          <div class="north-pole">
+            <span class="pole-snow"></span><span class="pole-roof"></span>
+            <span class="pole-body"><i class="window"></i><i class="door"></i></span>
+            <span class="pole-label">NORTH<br>POLE POST</span>
+          </div>
+          <span class="art-caption">NEXT STOP: THE NORTH POLE</span>
+        </div>
+      </section>
+
+      <section class="track-section" id="track" aria-labelledby="track-title">
+        <div class="section-heading">
+          <p class="eyebrow">THE CHRISTMAS POST OFFICE</p>
+          <h2 id="track-title">Where’s your letter now?</h2>
+          <p>Enter the special tracking number from your KGG letter card.</p>
+        </div>
+        <form class="track-form" id="tracking-form">
+          <label class="sr-only" for="tracking-number">Your tracking number</label>
+          <span class="form-icon" aria-hidden="true">✉</span>
+          <input id="tracking-number" name="tracking-number" type="text" autocomplete="off" spellcheck="false" placeholder="Enter your tracking number" aria-describedby="tracking-message">
+          <button type="submit">Find my letter <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="tracking-message" id="tracking-message" role="status" aria-live="polite"></p>
+
+        <article class="tracking-card" id="tracking-card" aria-live="polite" hidden>
+          <div class="card-topline">
+            <div>
+              <p class="card-kicker">YOUR LETTER’S JOURNEY <span aria-hidden="true">✦</span></p>
+              <h3 id="card-recipient">A letter to Santa</h3>
+            </div>
+            <span class="status-pill"><span class="status-dot"></span><span id="current-status">At the North Pole sorting office</span></span>
+          </div>
+          <div class="route">
+            <div class="route-place"><span class="route-pin pin-start">⌂</span><span><strong>KGG Kitakyushu</strong><small>Higashida, Japan</small></span></div>
+            <div class="route-line" style="--journey-progress: 72%"><span class="route-trail"></span><span class="route-plane" aria-hidden="true">✈</span></div>
+            <div class="route-place route-end"><span class="route-pin pin-end">✦</span><span><strong>North Pole</strong><small>Santa’s Post Office</small></span></div>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Journey progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="72"><span id="progress-bar"></span></div>
+          <div class="timeline" id="timeline">
+            <div class="timeline-item is-complete">
+              <span class="timeline-icon">✓</span><div><strong>Letter posted</strong><small>Left KGG, Kitakyushu</small></div><time>Dec 12</time>
+            </div>
+            <div class="timeline-item is-complete">
+              <span class="timeline-icon">✓</span><div><strong>On its way north</strong><small>Cleared the Christmas post office</small></div><time>Dec 14</time>
+            </div>
+            <div class="timeline-item is-current">
+              <span class="timeline-icon">✦</span><div><strong>At the North Pole!</strong><small>Being sorted by Santa’s elves</small></div><time>Today</time>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-icon">4</span><div><strong>Delivered to Santa</strong><small>Your letter is ready for Santa to read</small></div><time>Next stop</time>
+            </div>
+          </div>
+          <div class="card-footer"><span>TRACKING NO. <strong id="tracking-code"></strong></span><span>Powered by Christmas magic <b aria-hidden="true">✦</b></span></div>
+        </article>
+        <p class="demo-note">This is a pretend tracking experience for the KGG Santa Letter program. Every letter’s journey is powered by a little imagination. <span lang="ja">※この追跡画面はプログラム用のデモです。</span></p>
+      </section>
+
+      <section class="how-section" id="how-it-works">
+        <p class="eyebrow">THREE STEPS. ONE VERY MERRY DESTINATION.</p>
+        <h2>How the magic works</h2>
+        <div class="steps">
+          <article class="step-card"><span class="step-number">01</span><span class="step-illustration" aria-hidden="true">✍️</span><h3>Write your letter</h3><p>Share your Christmas wishes in your KGG English program.</p></article>
+          <article class="step-card"><span class="step-number">02</span><span class="step-illustration" aria-hidden="true">📮</span><h3>Send it on its way</h3><p>Drop your letter in the special KGG Christmas postbox.</p></article>
+          <article class="step-card"><span class="step-number">03</span><span class="step-illustration" aria-hidden="true">🎅</span><h3>Follow its journey</h3><p>Use your tracking number and see how close it is to Santa.</p></article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" id="about">
+      <a class="footer-brand" href="#">KGG <span>✦</span></a>
+      <p>Kitakyushu Global Gateway · A little English, a lot of Christmas magic.</p>
+      <p class="footer-japanese">きたきゅうしゅうから、世界へ。そして、サンタさんへ！</p>
+    </footer>
+  </body>
+</html>
